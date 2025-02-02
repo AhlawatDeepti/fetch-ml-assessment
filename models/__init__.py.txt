@@ -1,0 +1,5 @@
+# models/__init__.py
+# Initialize the models package
+
+from .sentence_transformer import SentenceTransformer
+from .multitask_model import MultiTaskModel

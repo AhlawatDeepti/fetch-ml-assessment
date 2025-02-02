@@ -1,0 +1,50 @@
+Training Considerations and Transfer Learning Strategy
+
+1. Freezing the Entire Network:
+
+What It Means: All parameters are fixed, and no part of the network is updated during training.
+
+Pros:
+Prevents overfitting on very small datasets.
+Reduces training time since only any additional layers (if present) are updated.
+
+Cons:
+No task-specific adaptation occurs, which may limit performance if the downstream task differs significantly from the pre-training tasks.
+
+2. Freezing Only the Transformer Backbone:
+
+What It Means: The shared encoder (BERT-based SentenceTransformer) is kept fixed, while the task-specific heads are fine-tuned.
+
+Pros:
+Retains robust, pre-trained language representations.
+Allows the task-specific heads to adapt to the particular requirements of each task.
+
+Cons:
+The fixed backbone may not fully adjust to domain-specific nuances, potentially limiting performance improvements.
+
+3. Freezing One Task-Specific Head:
+
+What It Means: One of the task-specific heads is kept fixed while the shared encoder and the other head are fine-tuned.
+
+Pros:
+Useful when one task has already achieved acceptable performance or has abundant data.
+Focuses learning on the more challenging or less established task.
+
+Cons:
+May lead to imbalance if the fixed head prevents the shared encoder from fully adapting to both tasks.
+
+Transfer Learning Approach
+
+1.Pre-trained Model Choice:
+
+Use a robust pre-trained model such as bert-base-uncased, which has demonstrated strong performance across various NLP tasks.
+
+2.Layer Freezing Strategy:
+
+Initial Phase: Freeze most of the transformer layers (except for the task-specific heads and possibly the top one or two layers of the backbone). This leverages the strong pre-trained features and minimizes overfitting on limited data.
+
+Gradual Unfreezing: Once the task-specific heads stabilize, gradually unfreeze additional layers of the backbone to allow for fine-tuning to the new task domain.
+
+3.Rationale:
+
+This strategy balances stability and adaptability. Freezing most layers initially ensures that the model retains its pre-trained knowledge, while gradually unfreezing allows the model to adapt to the specifics of the new tasks as more task-specific data becomes available.
