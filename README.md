@@ -4,20 +4,20 @@
 ## Overview
 This project contains solutions for the Fetch ML Assessment, covering:
 - Task 1: Sentence Transformer implementation using BERT.
-- **Task 2:** Multi-Task Learning with Sentence Classification & Sentiment Analysis.
-- **Task 3:** Training considerations, freezing strategies, and transfer learning.
-- **Task 4:** Training loop implementation for the multi-task model.
+- Task 2: Multi-Task Learning with Sentence Classification & Sentiment Analysis.
+- Task 3: Training considerations, freezing strategies, and transfer learning.
+- Task 4: Training loop implementation for the multi-task model.
 
 All solutions are implemented in Jupyter notebooks with clean, structured code.
 
 ## 📂 Files and Folders
-- `notebooks/` → Jupyter notebooks for each task.
-- `models/` → Python scripts for model implementation.
-- `docs/` → Additional write-ups (Task 3 explanation).
-- `requirements.txt` → List of dependencies.
+- notebooks/ → Jupyter notebooks for each task.
+- models/ → Python scripts for model implementation.
+- docs/ → Additional write-ups (Task 3 explanation).
+- requirements.txt → List of dependencies.
 
 ## 🔧 Setup Instructions
-1. **Clone the Repository:**
+1. Clone the Repository:
    ```bash
    git clone <repository_url>
    cd fetch-ml-assessment
