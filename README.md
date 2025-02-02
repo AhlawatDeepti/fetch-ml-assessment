@@ -3,7 +3,7 @@
 
 ## Overview
 This project contains solutions for the Fetch ML Assessment, covering:
-- **Task 1:** Sentence Transformer implementation using BERT.
+- Task 1: Sentence Transformer implementation using BERT.
 - **Task 2:** Multi-Task Learning with Sentence Classification & Sentiment Analysis.
 - **Task 3:** Training considerations, freezing strategies, and transfer learning.
 - **Task 4:** Training loop implementation for the multi-task model.
